@@ -12,4 +12,4 @@ try:
     if conexion.is_connected():
         print("Conectado exitosamente")
 except Error as ex:
-    print("Error durante la conexion")
+    print("Error durante la conexion", ex)
