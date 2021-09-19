@@ -1,2 +1,2 @@
-print("Hola")
-input()
+import mysql.connector
+
