@@ -7,7 +7,7 @@ try:
         port = 3306,
         user = 'root',
         password = 'Pool!Live45427752',
-        db = 'mts'
+        db = 'db_diseases'
     )
     
 except Exception as ex:
