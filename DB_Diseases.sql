@@ -1,41 +1,46 @@
 CREATE DATABASE db_diseases;
 
 CREATE TABLE enfermedad (
-	id INT NOT NULL AUTO_INCREMENT,
     Nombre VARCHAR (50) NOT NULL,
-	PRIMARY KEY (id)
+    Enfermedad_id INT NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (Enfermedad_id)
 );
 
 CREATE TABLE sintomas (
-	sintoma_id INT NOT NULL AUTO_INCREMENT,
-    sintomas_posibles VARCHAR (275) NOT NULL,
-    sintomas_menos_posibles VARCHAR (275) NOT NULL,
-    sintomas_asintomaticos VARCHAR (275) NOT NULL,
-    sintoma_enfermedad VARCHAR (50) NOT NULL,
-    PRIMARY KEY (sintoma_enfermedad),
-    CONSTRAINT fk_sintoma_id FOREIGN KEY (sintoma_id) REFERENCES enfermedad (id)
+	Sintoma_id INT NOT NULL AUTO_INCREMENT,
+    Enfermedad_id INT NOT NULL,
+    Sintomas_posibles VARCHAR (275) NOT NULL,
+    Sintomas_menos_posibles VARCHAR (275) NOT NULL,
+    Sintomas_asintomaticos VARCHAR (275) NOT NULL,
+    PRIMARY KEY (Sintoma_id),
+    CONSTRAINT fk_sintoma_enfermedad FOREIGN KEY (Enfermedad_id) REFERENCES enfermedad (Enfermedad_id)
 );
 
 CREATE TABLE tratamientos (
 	Tratamiento_id INT NOT NULL AUTO_INCREMENT,
+    Sintoma_id INT NOT NULL,
     Tratamiento VARCHAR (275) NOT NULL,
-    Nombre_E VARCHAR (50) NOT NULL,
     PRIMARY KEY (Tratamiento_id),
-    CONSTRAINT fk_id_tratamiento FOREIGN KEY (Tratamiento_id) REFERENCES sintomas (sintoma_id)
+    CONSTRAINT fk_tratamiento_sintoma FOREIGN KEY (Sintoma_id) REFERENCES sintomas (Sintoma_id)
 );
 
 CREATE TABLE causas (
 	Causa_id INT NOT NULL AUTO_INCREMENT,
+    Enfermedad_id INT NOT NULL,
     Causa_posible VARCHAR (275) NOT NULL,
     Causa_menos_posible VARCHAR (275) NOT NULL,
     PRIMARY KEY (Causa_id),
-    CONSTRAINT fk_causa_N_E FOREIGN KEY (Causa_id) REFERENCES sintomas (sintoma_id)
+    CONSTRAINT fk_causa_Enfermedad FOREIGN KEY (Enfermedad_id) REFERENCES enfermedad (Enfermedad_id)
 );
 
-INSERT INTO enfermedad (Nombre,Sintomas,Tratamientos,Causas) VALUES
-('Ulcera Corneal','Lagrimeo-Escozor-Irritacion-Enrojecimiento-Dolor_De_Cabeza-Vision_Borrosa',
-'Proteger Los Ojos De Forma Adecuada Y Unos Primeros Auxilios A Tiempo Pueden Salvar La Vista',
-'Traumatismo_directos-Cuerpos_extraños');
+INSERT INTO enfermedad (Nombre) VALUES
+('Ulcera Corneal');
+INSERT INTO sintomas (Sintomas_posibles, Sintomas_menos_posibles, Sintomas_asintomaticos,Enfermedad_id) VALUES 
+('Dolor de cabeza', 'Vision borrosa', 'Lagrimeo');
+INSERT INTO tratamiento (Tratamiento) VALUES 
+('Proteger los ojos de forma adecuada');
+INSERT INTO causas (Causa_posible, Causa_menos_posible) VALUES
+('Traumatismo directos', 'Cuerpo extraño');
 
 SELECT * FROM enfermedad;
 
