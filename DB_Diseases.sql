@@ -36,12 +36,12 @@ CREATE TABLE causas (
 INSERT INTO enfermedad (Nombre) VALUES
 ('Ulcera Corneal');
 INSERT INTO sintomas (Sintomas_posibles, Sintomas_menos_posibles, Sintomas_asintomaticos,Enfermedad_id) VALUES 
-('Dolor de cabeza', 'Vision borrosa', 'Lagrimeo');
-INSERT INTO tratamiento (Tratamiento) VALUES 
-('Proteger los ojos de forma adecuada');
-INSERT INTO causas (Causa_posible, Causa_menos_posible) VALUES
-('Traumatismo directos', 'Cuerpo extraño');
+('Dolor de cabeza', 'Vision borrosa', 'Lagrimeo', 1);
+INSERT INTO tratamientos (Tratamiento, Sintoma_id) VALUES 
+('Proteger los ojos de forma adecuada', 1);
+INSERT INTO causas (Causa_posible, Causa_menos_posible, Enfermedad_id) VALUES
+('Traumatismo directos', 'Cuerpo extraño', 1);
 
-SELECT * FROM enfermedad;
+SELECT * FROM tratamientos WHERE tratamiento_id = 1;
 
 DROP DATABASE db_diseases;
