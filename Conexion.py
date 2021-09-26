@@ -11,8 +11,17 @@ try:
     )
     if connection.is_connected():
         print("Conexion Exitosa")
-        infoServer = connection.get_server_info()
-        print("Info del servidor:",infoServer)
+
+        cursor = connection.cursor()
+        cursor.execute("SELECT database();")
+        registro = cursor.fetchone()
+        print("Conectado a la BD:",registro)
+
+        cursor.execute("SELECT * FROM enfermedad")
+        resultado = cursor.fetchall()
+
+        for fila in resultado:
+            print(fila[0],fila[1])
     
 except Error as ex:
     print("Error durante la conexion: ",ex)
