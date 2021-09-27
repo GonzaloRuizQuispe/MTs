@@ -1,5 +1,7 @@
+#MySql Connector
 import mysql.connector
 from mysql.connector import Error
+#Insertar Datos Desde Administracion
 
 try:
     connection = mysql.connector.connect(
@@ -22,6 +24,7 @@ try:
 
         for fila in resultado:
             print(fila[0],fila[1])
+        print("Total de registros: ",cursor.rowcount)
     
 except Error as ex:
     print("Error durante la conexion: ",ex)

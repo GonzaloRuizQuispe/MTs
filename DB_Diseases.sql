@@ -42,6 +42,6 @@ INSERT INTO tratamientos (Tratamiento, Sintoma_id) VALUES
 INSERT INTO causas (Causa_posible, Causa_menos_posible, Enfermedad_id) VALUES
 ('Traumatismo directos', 'Cuerpo extraño', 1);
 
-SELECT * FROM tratamientos;
+SELECT * FROM enfermedad,sintomas,tratamientos,causas;
 
 DROP DATABASE db_diseases;
