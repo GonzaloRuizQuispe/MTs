@@ -1,6 +1,8 @@
 #MySql Connector
 import mysql.connector
 from mysql.connector import Error
+from INSERT import insert
+from COMPARAR import comparar
 #Insertar Datos Desde Administracion
 
 try:
@@ -25,7 +27,11 @@ try:
         for fila in resultado:
             print(fila[0],fila[1])
         print("Total de registros: ",cursor.rowcount)
-    
+        
+        #Prueba de insercion de datos 
+        vector = input(str("Ingrese el nombre de la enfermedad"))
+        INSERT(vector,cursor)
+
 except Error as ex:
     print("Error durante la conexion: ",ex)
 
