@@ -1,7 +1,8 @@
-#Nombre de variblaes a cambiar para la web
+#Insertar datos en la base de datos.
 
-def insert (vector,cursor):
-    return cursor.execute("INSERT INTO enfermedad (nombre) VALUES ("+vector+")")
+def INSERT (vector,cursor):
+    cursor.execute("INSERT INTO enfermedad (nombre) VALUES ("+vector+")")
+    return 0
 
 
 #Para guardar un valor con la sentencia mysql se necesita que si o si sea "str" y para comparar se debe mostrar los valores

@@ -1,9 +1,8 @@
 #MySql Connector
 import mysql.connector
 from mysql.connector import Error
-from INSERT import insert
-from COMPARAR import comparar
-#Insertar Datos Desde Administracion
+#Insertar Datos Desde Administracion - Functions
+from Functions import froms
 
 try:
     connection = mysql.connector.connect(
@@ -19,18 +18,10 @@ try:
         cursor = connection.cursor()
         cursor.execute("SELECT database();")
         registro = cursor.fetchone()
-        print("Conectado a la BD:",registro)
+        print("Conectado a la BD:",registro,"\n")
 
-        cursor.execute("SELECT * FROM enfermedad")
-        resultado = cursor.fetchall()
-
-        for fila in resultado:
-            print(fila[0],fila[1])
-        print("Total de registros: ",cursor.rowcount)
-        
-        #Prueba de insercion de datos 
-        vector = input(str("Ingrese el nombre de la enfermedad"))
-        INSERT(vector,cursor)
+        #Pruebas
+        froms.FROM(cursor,"enfermedad")
 
 except Error as ex:
     print("Error durante la conexion: ",ex)
