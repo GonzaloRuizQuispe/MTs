@@ -3,18 +3,18 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/')
-def home():
-    return render_template('MTs.html')
+@app.route('/Home')
+def Home():
+    return render_template('Home.html')
 
 
-@app.route('/about')
-def about():
+@app.route('/MiCuenta')
+def MiCuenta():
     return render_template('MiCuenta.html')
 
 
-@app.route('/about')
-def about():
+@app.route('/Info')
+def info():
     return render_template('Info.html')
 
 
