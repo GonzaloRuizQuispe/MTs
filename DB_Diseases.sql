@@ -7,8 +7,7 @@ CREATE TABLE enfermedad (
 );
 
 CREATE TABLE sintomas (
-	Sintoma_id INT NOT NULL AUTO_INCREMENT,
-    Enfermedad_id INT NOT NULL,
+    Enfermedad_id INT NOT NULL AUTO_INCREMENT,
     Sintomas_posibles VARCHAR (275) NOT NULL,
     Sintomas_menos_posibles VARCHAR (275) NOT NULL,
     Sintomas_asintomaticos VARCHAR (275) NOT NULL,
