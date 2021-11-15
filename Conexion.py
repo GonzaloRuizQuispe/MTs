@@ -21,7 +21,7 @@ try:
         print("Conectado a la BD:",registro,"\n")
 
         #Pruebas
-        froms.FROM(cursor,"enfermedad")
+        froms.FROM(cursor,"causas")
 
 except Error as ex:
     print("Error durante la conexion: ",ex)

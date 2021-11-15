@@ -7,7 +7,8 @@ CREATE TABLE enfermedad (
 );
 
 CREATE TABLE sintomas (
-    Enfermedad_id INT NOT NULL AUTO_INCREMENT,
+    Sintoma_id INT NOT NULL AUTO_INCREMENT,
+    Enfermedad_id INT NOT NULL,
     Sintomas_posibles VARCHAR (275) NOT NULL,
     Sintomas_menos_posibles VARCHAR (275) NOT NULL,
     Sintomas_asintomaticos VARCHAR (275) NOT NULL,
@@ -41,6 +42,6 @@ INSERT INTO tratamientos (Tratamiento, Sintoma_id) VALUES
 INSERT INTO causas (Causa_posible, Causa_menos_posible, Enfermedad_id) VALUES
 ('Traumatismo directos', 'Cuerpo extraño', 1);
 
-SELECT * FROM enfermedad,sintomas,tratamientos,causas;
+SELECT * FROM enfermedad,causas;
 
 DROP DATABASE db_diseases;
