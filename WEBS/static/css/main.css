@@ -5,4 +5,22 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #040C40;
+    text-align: center;
+    
+}
+
+h1{
+    color: white
+}
+
+section{
+    color: white
+}
+
+p{
+    color:white
+}
+
+button{
+    background-color: yellow;
 }
