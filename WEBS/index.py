@@ -17,6 +17,5 @@ def MiCuenta():
 def info():
     return render_template('Info.html')
 
-
 if __name__ == '__main__':
     app.run(debug=True)
