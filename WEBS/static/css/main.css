@@ -6,7 +6,6 @@ body {
     background-attachment: fixed;
     background-color: #040C40;
     text-align: center;
-    
 }
 
 h1{
@@ -19,8 +18,4 @@ section{
 
 p{
     color:white
-}
-
-button{
-    background-color: yellow;
 }

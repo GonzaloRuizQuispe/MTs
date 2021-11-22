@@ -18,5 +18,10 @@ def info():
     return render_template('Info.html')
 
 
+@app.route('/Login')
+def Login():
+    return render_template('Login.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
