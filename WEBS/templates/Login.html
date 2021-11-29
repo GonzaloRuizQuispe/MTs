@@ -3,13 +3,13 @@
 {% block content %}
 
 <div class="login-page">
-    <div class="form">
-      <form class="login-form" action="/Login" method="POST">
-        <input type="password" placeholder="Access Code" style="text-align: center;"/>
-        <button>login</button>
-        <p class="message">Not Registered? <a href="{{ url_for('Home')}}">Use Without Registration</a></p>
-      </form>
-    </div>
+  <div class="form">
+    <form class="login-form">
+      <input type="password" placeholder="Access Code" style="text-align: center;" />
+      <button>login</button>
+      <p class="message">Not Registered? <a href="{{ url_for('MiCuenta')}}">Use Without Registration</a></p>
+    </form>
   </div>
+</div>
 
 {% endblock %}
