@@ -4,9 +4,9 @@
 
 <div class="login-page">
   <div class="form">
-    <form class="login-form">
-      <input type="password" placeholder="Access Code" style="text-align: center;" />
-      <button>login</button>
+    <form class="login-form" action="" method="post">
+      <input type="password" name="code" placeholder="Access Code" style="text-align: center;" />
+      <button type="submit">login</button>
       <p class="message">Not Registered? <a href="{{ url_for('MiCuenta')}}">Use Without Registration</a></p>
     </form>
   </div>
