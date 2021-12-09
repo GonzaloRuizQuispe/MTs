@@ -74,3 +74,8 @@ p{
     color: #4CAF50;
     text-decoration: none;
   }
+
+.contenido_propio{
+  margin-left: 110px;
+  margin-right: 110px;
+}
