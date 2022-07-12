@@ -1,6 +1,7 @@
 import pyotp
 
 secret = 'OAHTLYV7LQEPUIMTM2UCQNX7FDGZKQMG'
+
 print("Mi Secreto:", secret)
 
 totp_object = pyotp.TOTP(secret)
